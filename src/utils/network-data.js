@@ -1,6 +1,5 @@
 import { sanitizeObject, sanitizeEmail, sanitizeName, isValidPassword } from './sanitize';
-
-const BASE_URL = 'https://notes-api.dicoding.dev/v1';
+import { API_BASE_URL as BASE_URL } from "./constants";
 
 /** Register user dengan sanitasi input */
 export async function registerUser({ name, email, password }) {
