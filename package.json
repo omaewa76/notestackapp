@@ -1,0 +1,24 @@
+{
+  "name": "notestack-app",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Taukhid Aji Nurwijayadi - Dicoding Indonesia",
+  "dependencies": {
+    "dompurify": "^3.4.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
+    "vite": "^7.1.0"
+  }
+}
