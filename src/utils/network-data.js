@@ -1,5 +1,5 @@
 import { sanitizeObject, sanitizeEmail, sanitizeName, isValidPassword } from './sanitize';
-import { API_BASE_URL as BASE_URL } from "./constants";
+import { getApiUrl } from "./constants";
 
 /** Register user dengan sanitasi input */
 export async function registerUser({ name, email, password }) {
@@ -17,7 +17,7 @@ export async function registerUser({ name, email, password }) {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/register`, {
+    const response = await fetch(getApiUrl(`register`), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -51,7 +51,7 @@ export async function loginUser({ email, password }) {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/login`, {
+    const response = await fetch(getApiUrl(`login`), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: sanitizedEmail, password }),
@@ -95,7 +95,7 @@ async function fetchWithAuth(endpoint, options = {}) {
     ...options.headers,
   };
 
-  const response = await fetch(`${BASE_URL}${endpoint}`, {
+  const response = await fetch(getApiUrl(`${endpoint}`), {
     ...options,
     headers,
     body: sanitizedBody,

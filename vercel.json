@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/register",
+      "destination": "https://notes-api.dicoding.dev/v1/register"
+    },
+    {
+      "source": "/login",
+      "destination": "https://notes-api.dicoding.dev/v1/login"
+    },
+    {
+      "source": "/notes",
+      "destination": "https://notes-api.dicoding.dev/v1/notes"
+    },
+    {
+      "source": "/notes/:path*",
+      "destination": "https://notes-api.dicoding.dev/v1/notes/:path*"
+    }
+  ]
+}

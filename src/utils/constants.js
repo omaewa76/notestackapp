@@ -5,7 +5,12 @@ export const STORAGE_KEYS = {
   LANGUAGE: 'notestack_language',
 };
 
-export const API_BASE_URL = import.meta.env.PROD;
+export const API_BASE_URL = import.meta.env.PROD ? '' : (import.meta.env.VITE_API_URL || 'https://notes-api.dicoding.dev/v1');
+
+export const getApiUrl = (endpoint) => {
+  const base = import.meta.env.PROD ? '' : API_BASE_URL;
+  return `${base}/${endpoint}`;
+}
 
 export const THEMES = {
   LIGHT: 'light',
